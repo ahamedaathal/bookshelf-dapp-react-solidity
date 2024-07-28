@@ -5,6 +5,7 @@ import { sepolia } from 'thirdweb/chains';
 import { createWallet } from 'thirdweb/wallets';
 import contractData from "../contracts/BookShelf.json";
 import { BookType } from './types';
+
 const contractAddress = import.meta.env.VITE_CONTRACT_ADDRESS;
 
 export const client = createThirdwebClient({
@@ -17,17 +18,7 @@ export const wallets = [
     createWallet("me.rainbow"),
 ];
 
-async function initializeContract() {
-    account = await wallets[0].connect({ client });
-    contractInfo = getContract({
-        client,
-        chain: sepolia,
-        address: contractAddress,
-        abi: contractData.abi,
-    });
-}
-
-initializeContract().catch(console.error);
+const account = await wallets[0].connect({ client });
 
 const contractInfo = getContract({
     client,
