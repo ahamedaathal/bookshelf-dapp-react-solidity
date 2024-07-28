@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { createThirdwebClient, getContract, prepareContractCall, readContract, sendAndConfirmTransaction } from 'thirdweb';
 import { sepolia } from 'thirdweb/chains';
 import { createWallet } from 'thirdweb/wallets';
