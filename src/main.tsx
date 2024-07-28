@@ -4,6 +4,8 @@ import ThirdWebProvider from './ThirdWebProvider.tsx'
 import './index.css'
 import AppRouter from './AppRouter.tsx'
 
+
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThirdWebProvider>

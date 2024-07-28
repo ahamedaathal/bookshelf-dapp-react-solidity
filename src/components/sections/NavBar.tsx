@@ -1,13 +1,13 @@
-import { client, wallets } from "@/ThirdWebProvider";
-import { getContractOwner } from "@/lib/hooks";
+
+import { client, getContractOwner, wallets } from "@/lib/hooks";
 import { BookIcon, BookOpenIcon, MenuIcon, PlusIcon } from "@/lib/icons";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { sepolia } from "thirdweb/chains";
 import { ConnectButton, useActiveAccount } from "thirdweb/react";
 import { Button } from "../ui/button";
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+
 
 export default function NavBar() {
     const activeAccount = useActiveAccount();
@@ -61,7 +61,7 @@ export default function NavBar() {
                                 <BookOpenIcon className="h-4 w-4" />
                             </Link>
                         </SheetClose>
-                        <SheetClose asChild>
+                        {!isAuthorized && <SheetClose asChild>
                             <Link
                                 to="/my-books"
                                 className="inline-flex items-center justify-between rounded-md bg-background px-3 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
@@ -69,7 +69,7 @@ export default function NavBar() {
                                 <span>My Books</span>
                                 <BookIcon className="h-4 w-4" />
                             </Link>
-                        </SheetClose>
+                        </SheetClose>}
                         {isAuthorized && <SheetClose asChild>
                             <Link
                                 to="/create-book"

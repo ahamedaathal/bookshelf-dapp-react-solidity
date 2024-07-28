@@ -1,0 +1,202 @@
+[
+  {
+    "inputs": [],
+    "stateMutability": "payable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "author",
+    "outputs": [
+      {
+        "internalType": "address payable",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "bookId",
+        "type": "uint256"
+      }
+    ],
+    "name": "buyBook",
+    "outputs": [],
+    "stateMutability": "payable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAuthorBooks",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "author",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "bookId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "price",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes",
+            "name": "title",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "author_name",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "published_date",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "content",
+            "type": "bytes"
+          },
+          {
+            "internalType": "enum BookShelf.BookStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "purchase_counter",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BookShelf.BookMetadata[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "buyer",
+        "type": "address"
+      }
+    ],
+    "name": "getBuyerBooks",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "address",
+            "name": "author",
+            "type": "address"
+          },
+          {
+            "internalType": "uint256",
+            "name": "bookId",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint8",
+            "name": "price",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bytes",
+            "name": "title",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "author_name",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "published_date",
+            "type": "bytes"
+          },
+          {
+            "internalType": "bytes",
+            "name": "content",
+            "type": "bytes"
+          },
+          {
+            "internalType": "enum BookShelf.BookStatus",
+            "name": "status",
+            "type": "uint8"
+          },
+          {
+            "internalType": "uint256",
+            "name": "purchase_counter",
+            "type": "uint256"
+          }
+        ],
+        "internalType": "struct BookShelf.BookMetadata[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "title_",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "content_",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "authorname_",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "date_",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "purchase_counter_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint8",
+        "name": "price_",
+        "type": "uint8"
+      },
+      {
+        "internalType": "enum BookShelf.BookStatus",
+        "name": "bookstatus_",
+        "type": "uint8"
+      }
+    ],
+    "name": "publishBook",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]
