@@ -14,11 +14,7 @@ export const client = createThirdwebClient({
 
 export const wallets = [
     createWallet("io.metamask"),
-    createWallet("com.coinbase.wallet"),
-    createWallet("me.rainbow"),
 ];
-
-const account = await wallets[0].connect({ client });
 
 const contractInfo = getContract({
     client,
@@ -45,6 +41,7 @@ export const useBooks = () => {
     };
 
     const buyBook = async (bookId: number, price: string) => {
+        const account = await wallets[0].connect({ client });
         const userBooks = await getBuyerBooks(account.address);
         const alreadyOwned = userBooks.some(book => book.bookId.toString(16) === bookId.toString(16));
 
