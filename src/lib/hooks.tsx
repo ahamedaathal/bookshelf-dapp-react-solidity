@@ -17,7 +17,18 @@ export const wallets = [
     createWallet("me.rainbow"),
 ];
 
-const account = await wallets[0].connect({ client });
+async function initializeContract() {
+    account = await wallets[0].connect({ client });
+    contractInfo = getContract({
+        client,
+        chain: sepolia,
+        address: contractAddress,
+        abi: contractData.abi,
+    });
+}
+
+initializeContract().catch(console.error);
+
 const contractInfo = getContract({
     client,
     chain: sepolia,
