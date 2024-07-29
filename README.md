@@ -44,6 +44,6 @@ The smart contract allows users to purchase books and authors to manage their in
 
 ## Video Demo
 
-[!Web3 Dapp Demo Video ([https://img.youtube.com/vi/_5tFXJQIzi4/0.jpg)](https://www.youtube.com/watch?v=_5tFXJQIzi4](https://flonnect.com/video/embed/560913d0cd14-4c1f-b50f-8be2dda27073))
+Web3 Dapp Demo Video (https://www.youtube.com/watch?v=_5tFXJQIzi4](https://flonnect.com/video/embed/560913d0cd14-4c1f-b50f-8be2dda27073)
 
 Created by ahamedaathal
