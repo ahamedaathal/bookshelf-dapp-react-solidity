@@ -44,6 +44,6 @@ The smart contract allows users to purchase books and authors to manage their in
 
 ## Video Demo
 
-[![App Demo Video]](https://raw.githubusercontent.com/ahamedaathal/repository/main/path/App video.mp4)
+<video controls src="AppDemo.mp4" title="App demo"></video>
 
 Created by ahamedaathal
