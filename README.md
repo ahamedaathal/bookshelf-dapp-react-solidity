@@ -5,13 +5,13 @@ A decentralized application (dApp) for buying books from an author using Web3 te
 ## Features
 
 - User-friendly interface for browsing and purchasing books
-- Integration with Web3 wallet (using [SDK Provider Name])
+- Integration with Web3 wallet (using ThirdWeb)
 - Smart contract for handling book transactions
 
 ## Tech Stack
 
-- React + TypeScript + Vite
-- [SDK Provider Name] for Web3 integration
+- React + TypeScript + Vite + Tailwind + Shadcn + Vercel
+- ThirdWeb for Web3 integration
 - Hardhat for smart contract development
 
 ## Getting Started
@@ -44,6 +44,6 @@ The smart contract allows users to purchase books and authors to manage their in
 
 ## Video Demo
 
-[Link to video demo]
+[!Web3 Dapp Demo Video ([https://img.youtube.com/vi/_5tFXJQIzi4/0.jpg)](https://www.youtube.com/watch?v=_5tFXJQIzi4](https://flonnect.com/video/embed/560913d0cd14-4c1f-b50f-8be2dda27073))
 
 Created by ahamedaathal
