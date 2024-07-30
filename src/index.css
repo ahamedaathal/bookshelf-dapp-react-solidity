@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "Manrope", sans-serif;
+}
+
 @layer base {
   :root {
     --background: 210 100% 97%;
