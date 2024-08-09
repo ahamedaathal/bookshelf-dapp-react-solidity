@@ -22,7 +22,6 @@ export default function BookList() {
 
         setLoadingBookId(bookId);
         try {
-            console.log(bookId, price);
             const priceInEther = BigInt(Math.round(Number(price) / etherToUsdRate * 1e18)).toString()
             await buyBook(bookId, priceInEther);
             navigate("/my-books");
