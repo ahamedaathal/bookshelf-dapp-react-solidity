@@ -7,6 +7,7 @@ import { Button } from "../ui/button";
 import { Card, CardContent } from "../ui/card";
 import { useNavigate } from 'react-router-dom';
 
+const etherToUsdRate = 2600;
 
 export default function BookList() {
     const [books, setBooks] = useState<BookType[]>([]);
@@ -18,9 +19,12 @@ export default function BookList() {
 
 
     const handlePurchase = async (bookId: number, price: string) => {
+
         setLoadingBookId(bookId);
         try {
-            await buyBook(bookId, price);
+            console.log(bookId, price);
+            const priceInEther = BigInt(Math.round(Number(price) / etherToUsdRate * 1e18)).toString()
+            await buyBook(bookId, priceInEther);
             navigate("/my-books");
         } catch (error) {
             if (error instanceof Error) {
@@ -55,6 +59,9 @@ export default function BookList() {
         };
         fetchBooks();
     }, []);
+
+    // console.log(books);
+
 
     if (books.length === 0) {
         return <div>No books found</div>

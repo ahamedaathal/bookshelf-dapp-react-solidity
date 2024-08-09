@@ -85,6 +85,7 @@ export const useBooks = () => {
     };
 
     const createBook = async (book: BookType) => {
+        const account = await wallets[0].connect({ client });
         const transaction = prepareContractCall({
             contract: contractInfo,
             method: "publishBook",
@@ -94,7 +95,7 @@ export const useBooks = () => {
                 book.author_name,
                 book.published_date,
                 book.purchase_counter,
-                book.price,
+                Number.parseInt(book.price),
                 book.status
             ]
         });

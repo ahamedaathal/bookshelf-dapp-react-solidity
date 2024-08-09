@@ -45,11 +45,13 @@ export default function CreateBookForm() {
             author_name: formData.authorname_,
             published_date: formData.date_,
             purchase_counter: formData.purchase_counter_,
-            price: Number(formData.price_),
+            price: formData.price_,
             status: formData.bookstatus_
         };
         try {
+            console.log(submitData);
             await createBook(submitData);
+            console.log(submitData);
             setFormData({
                 title_: "",
                 content_: "",
@@ -74,19 +76,19 @@ export default function CreateBookForm() {
                         <form className="space-y-4" onSubmit={handleSubmit}>
                             <div className="space-y-1">
                                 <Label htmlFor="title">Book Title</Label>
-                                <Input id="title" placeholder="Enter book title" name="title_" onChange={handleInputChange} />
+                                <Input id="title" required placeholder="Enter book title" name="title_" onChange={handleInputChange} />
                             </div>
                             <div className="space-y-1">
                                 <Label htmlFor="author">Author</Label>
-                                <Input id="author" placeholder="Enter author name" name="authorname_" onChange={handleInputChange} />
+                                <Input id="author" required placeholder="Enter author name" name="authorname_" onChange={handleInputChange} />
                             </div>
                             <div className="space-y-1">
                                 <Label htmlFor="content">Content</Label>
-                                <Textarea id="content" placeholder="Enter book content" rows={8} name="content_" onChange={handleInputChange} />
+                                <Textarea id="content" required placeholder="Enter book content" rows={8} name="content_" onChange={handleInputChange} />
                             </div>
                             <div className="space-y-1">
-                                <Label htmlFor="price">Price (ETH)</Label>
-                                <Input id="price" type="number" step="0.01" name="price_" onChange={handleInputChange} />
+                                <Label htmlFor="price">Price (USD)</Label>
+                                <Input id="price" type="number" step="1" required name="price_" onChange={handleInputChange} />
                             </div>
                             <div className="space-y-1 space-x-4">
                                 <Label htmlFor="date">Date Published</Label>
@@ -112,6 +114,7 @@ export default function CreateBookForm() {
                                                 setOpen(false);
                                                 setFormData({ ...formData, date_: newDate ? newDate.toISOString() : '' });
                                             }}
+                                            required
                                             initialFocus
                                         />
                                     </PopoverContent>
@@ -119,7 +122,7 @@ export default function CreateBookForm() {
                             </div>
                             <div className="space-y-1">
                                 <Label htmlFor="copies">Number of Copies</Label>
-                                <Input id="copies" type="number" min="1" name="purchase_counter_" onChange={(e) =>
+                                <Input id="copies" type="number" min="1" required name="purchase_counter_" onChange={(e) =>
                                     setFormData({ ...formData, purchase_counter_: Number(e.target.value) })
                                 } />
                             </div>
